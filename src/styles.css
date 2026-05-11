@@ -146,8 +146,38 @@
     border-color: var(--color-border);
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "ss01", "cv11";
   }
+
+  h1, h2, h3 {
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background-color: oklch(1 0 0 / 0.12);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid oklch(1 0 0 / 0.22);
+  }
+  .glass-dark {
+    background-color: oklch(0.22 0.02 60 / 0.55);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid oklch(1 0 0 / 0.1);
+  }
+  .text-balance { text-wrap: balance; }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-elevated { box-shadow: var(--shadow-elevated); }
+  .bg-gradient-warm { background-image: var(--gradient-warm); }
 }
