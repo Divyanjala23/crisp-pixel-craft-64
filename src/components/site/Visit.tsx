@@ -1,4 +1,5 @@
 import { SITE } from "@/lib/site";
+import interior from "@/assets/interior.jpg";
 
 export function Visit() {
   return (
