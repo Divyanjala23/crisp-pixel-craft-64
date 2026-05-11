@@ -29,7 +29,7 @@ export function Hero() {
             className="text-balance text-5xl sm:text-7xl lg:text-8xl font-light leading-[0.95] mb-6"
             style={{ fontFamily: "'Fraunces', serif", color: "oklch(0.97 0.005 60)" }}
           >
-            Aegean Soul.
+            Aegean Touch.
             <br />
             <em className="italic font-light" style={{ color: "oklch(0.78 0.10 45)" }}>Californian Charm.</em>
           </h1>
