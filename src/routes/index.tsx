@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
+import { InfoBar } from "@/components/site/InfoBar";
 import { Story } from "@/components/site/Story";
-import { Signature } from "@/components/site/Signature";
-import { FreshnessGrid } from "@/components/site/FreshnessGrid";
+import { Menu } from "@/components/site/Menu";
 import { SocialProof } from "@/components/site/SocialProof";
 import { Catering } from "@/components/site/Catering";
 import { Visit } from "@/components/site/Visit";
@@ -18,9 +18,9 @@ function Index() {
     <main className="bg-background text-foreground">
       <Nav />
       <Hero />
+      <InfoBar />
       <Story />
-      <Signature />
-      <FreshnessGrid />
+      <Menu />
       <SocialProof />
       <Catering />
       <Visit />

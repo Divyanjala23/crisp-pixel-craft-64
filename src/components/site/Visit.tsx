@@ -4,82 +4,57 @@ import interior from "@/assets/interior.jpg";
 export function Visit() {
   return (
     <section id="visit" className="py-24 sm:py-32 px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-        <div>
-          <span className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "oklch(0.47 0.13 45)" }}>
-            Visit Us
-          </span>
-          <h2 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-light text-balance" style={{ fontFamily: "'Fraunces', serif" }}>
-            Find us on <em className="italic">Santa Monica Blvd.</em>
-          </h2>
+      <div className="text-center max-w-3xl mx-auto mb-14">
+        <span className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "oklch(0.47 0.13 45)" }}>
+          Visit Us
+        </span>
+        <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-light text-balance" style={{ fontFamily: "'Fraunces', serif" }}>
+          Your morning <em className="italic">starts here</em>
+        </h2>
+        <p className="mt-6 text-base sm:text-lg uppercase tracking-[0.2em] text-muted-foreground">
+          {SITE.address}  ·  {SITE.hours.replace("Open Daily · ", "Open daily ")}
+        </p>
+      </div>
 
-          <div className="mt-8 inline-flex items-center gap-3 rounded-full px-5 py-2.5 shadow-soft" style={{ backgroundColor: "oklch(0.47 0.13 45)", color: "oklch(0.97 0.005 60)" }}>
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-70" style={{ backgroundColor: "oklch(0.97 0.005 60)" }} />
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full" style={{ backgroundColor: "oklch(0.97 0.005 60)" }} />
-            </span>
-            <span className="text-sm font-medium tracking-wide">Open Daily · 7:30am – 4:00pm</span>
-          </div>
-
-          <dl className="mt-10 space-y-4 text-sm max-w-md">
-            <div className="flex justify-between border-b border-border pb-3">
-              <dt className="text-muted-foreground uppercase tracking-wider text-xs">Address</dt>
-              <dd className="font-medium text-right">{SITE.address}<br />{SITE.city}</dd>
-            </div>
-            <div className="flex justify-between border-b border-border pb-3">
-              <dt className="text-muted-foreground uppercase tracking-wider text-xs">Phone</dt>
-              <dd className="font-medium"><a href={SITE.phoneHref} className="hover:underline">{SITE.phone}</a></dd>
-            </div>
-            <div className="flex justify-between border-b border-border pb-3">
-              <dt className="text-muted-foreground uppercase tracking-wider text-xs">Email</dt>
-              <dd className="font-medium"><a href={`mailto:${SITE.email}`} className="hover:underline">{SITE.email}</a></dd>
-            </div>
-            <div className="flex justify-between border-b border-border pb-3">
-              <dt className="text-muted-foreground uppercase tracking-wider text-xs">Instagram</dt>
-              <dd className="font-medium"><a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">{SITE.instagramHandle}</a></dd>
-            </div>
-          </dl>
-
-          <div className="mt-10 flex flex-wrap gap-3">
-            <a
-              href={SITE.toastUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-primary text-primary-foreground px-7 py-3.5 text-sm font-medium hover:bg-primary/90 transition-all shadow-soft"
-            >
-              Order on Toast →
-            </a>
-            <a
-              href={SITE.mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-foreground/15 px-7 py-3.5 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-all"
-            >
-              Get Directions
-            </a>
-          </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-12">
+        <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-elevated">
+          <img src={interior} alt="Monica Café interior — sun-washed banquette seating" className="h-full w-full object-cover" loading="lazy" />
         </div>
-
-        <div className="space-y-6">
-          <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-elevated">
-            <img
-              src={interior}
-              alt="Monica Café interior — sun-washed banquette seating and open kitchen"
-              className="h-full w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-          <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-elevated bg-muted">
-            <iframe
-              title="Monica Café location map"
-              src={SITE.mapEmbed}
-              className="h-full w-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-          </div>
+        <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-elevated bg-muted">
+          <iframe
+            title="Monica Café location map"
+            src={SITE.mapEmbed}
+            className="h-full w-full border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
         </div>
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-3">
+        <a
+          href={SITE.toastUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full bg-primary text-primary-foreground px-8 py-3.5 text-sm font-medium hover:bg-primary/90 transition-all shadow-soft"
+        >
+          Order Online →
+        </a>
+        <a
+          href={SITE.mapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full border border-foreground/15 px-8 py-3.5 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-all"
+        >
+          Get Directions
+        </a>
+        <a
+          href="#catering"
+          className="rounded-full border border-foreground/15 px-8 py-3.5 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-all"
+        >
+          Catering Inquiry
+        </a>
       </div>
     </section>
   );
