@@ -2,32 +2,45 @@ import { SITE } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="px-6 sm:px-12 lg:px-20 py-14 border-t border-border">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-sm text-muted-foreground">
+    <footer className="px-6 sm:px-12 lg:px-20 pt-20 pb-10" style={{ backgroundColor: "oklch(0.20 0.10 270)", color: "oklch(0.97 0.005 60)" }}>
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
-          <p style={{ fontFamily: "'Fraunces', serif" }} className="text-foreground text-xl">
-            Monica <em className="italic">Café</em>
+          <p className="text-2xl tracking-[0.18em] uppercase" style={{ fontFamily: "'Fraunces', serif" }}>
+            Monica <span className="italic" style={{ color: "oklch(0.78 0.10 50)" }}>Café</span>
           </p>
-          <p className="mt-2">{SITE.address}, {SITE.city}</p>
-          <p className="mt-1">{SITE.hours}</p>
+          <p className="mt-4 text-sm leading-relaxed opacity-80 max-w-sm">
+            Mediterranean-inspired café in the heart of Santa Monica. Farm-to-table breakfast, specialty coffee, and genuine hospitality.
+          </p>
         </div>
+
         <div>
-          <p className="uppercase tracking-[0.2em] text-xs text-foreground/70 mb-3">Contact</p>
-          <p><a href={SITE.phoneHref} className="hover:text-foreground">{SITE.phone}</a></p>
-          <p><a href={`mailto:${SITE.email}`} className="hover:text-foreground">{SITE.email}</a></p>
-          <p><a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">{SITE.instagramHandle}</a></p>
+          <p className="text-xs uppercase tracking-[0.3em] mb-5 opacity-70">Visit Us</p>
+          <p className="text-sm leading-relaxed">{SITE.address}</p>
+          <p className="text-sm leading-relaxed mt-1">{SITE.city}</p>
+          <p className="text-sm leading-relaxed mt-4">{SITE.hours}</p>
+          <p className="text-sm leading-relaxed mt-4">
+            <a href={SITE.phoneHref} className="hover:opacity-80">{SITE.phone}</a>
+          </p>
+          <p className="text-sm leading-relaxed mt-1">
+            <a href={`mailto:${SITE.email}`} className="hover:opacity-80">{SITE.email}</a>
+          </p>
         </div>
-        <div className="sm:text-right">
-          <a
-            href={SITE.toastUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-xs font-medium hover:bg-primary/90"
-          >
-            Order on Toast →
-          </a>
-          <p className="mt-6 text-xs">© {new Date().getFullYear()} Monica Café. All rights reserved.</p>
+
+        <div>
+          <p className="text-xs uppercase tracking-[0.3em] mb-5 opacity-70">Quick Links</p>
+          <ul className="space-y-2 text-sm">
+            <li><a href={SITE.toastUrl} target="_blank" rel="noopener noreferrer" className="hover:opacity-80">Order Online</a></li>
+            <li><a href="#menu" className="hover:opacity-80">View Menu</a></li>
+            <li><a href="#catering" className="hover:opacity-80">Catering</a></li>
+            <li><a href="#visit" className="hover:opacity-80">Visit Us</a></li>
+            <li><a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className="hover:opacity-80">Instagram</a></li>
+            <li><a href={SITE.uberEatsUrl} target="_blank" rel="noopener noreferrer" className="hover:opacity-80">Uber Eats</a></li>
+          </ul>
         </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/10 text-xs opacity-60 text-center tracking-wider">
+        © {new Date().getFullYear()} Monica Café  ·  All rights reserved  ·  Santa Monica, CA
       </div>
     </footer>
   );

@@ -1,72 +1,58 @@
-import { useEffect, useState } from "react";
-
 const reviews = [
   {
-    quote: "The Çılbır is a revelation — silky yogurt, perfectly poached eggs, that warm chili butter. Tastes like a Sunday in Istanbul.",
-    name: "Elena R.",
-    meta: "Local Guide · Santa Monica",
+    quote:
+      "The Çılbır absolutely delivered. Rich, comforting, and beautifully balanced — it truly stood out. Everything was top-notch. A really nice mix of Turkish and Middle Eastern flavors presented in a modern, thoughtful way.",
+    meta: "Google Review",
   },
   {
-    quote: "Easily the best espresso on Montana Ave. Bright, clean, and the staff actually cares. My new morning ritual.",
-    name: "Marcus T.",
-    meta: "Coffee enthusiast",
+    quote:
+      "The food was fresh, flavorful, and came out fast. The coffee was amazing too — smooth, strong, and not bitter at all. You can tell they use good beans and know what they're doing. The staff was super welcoming.",
+    meta: "Google Review",
   },
   {
-    quote: "Everything is so fresh you can taste the farmers market in it. The Mediterranean wrap ruined every other lunch spot for me.",
-    name: "Priya K.",
-    meta: "Local resident",
+    quote:
+      "Their matcha deserves a special mention — creamy, vibrant, and balanced, which is surprisingly hard to find in Santa Monica. Monica Café has quickly become one of my favorite local cafés.",
+    meta: "Google Review · 4.9 Stars",
   },
 ];
 
-export function SocialProof() {
-  const [i, setI] = useState(0);
-  useEffect(() => {
-    const t = setInterval(() => setI((x) => (x + 1) % reviews.length), 6000);
-    return () => clearInterval(t);
-  }, []);
-
+function Stars() {
   return (
-    <section className="py-24 sm:py-32 px-6 sm:px-12 lg:px-20" style={{ backgroundColor: "oklch(0.94 0.015 78)" }}>
-      <div className="max-w-5xl mx-auto text-center">
-        <span className="text-xs uppercase tracking-[0.3em] text-secondary font-medium" style={{ color: "oklch(0.42 0.07 135)" }}>
-          Loved by Santa Monica
-        </span>
+    <div className="flex gap-0.5 mb-4" aria-label="5 out of 5 stars">
+      {[0, 1, 2, 3, 4].map((s) => (
+        <svg key={s} width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style={{ color: "oklch(0.47 0.13 45)" }}>
+          <path d="M12 2l2.9 6.9L22 10l-5.5 4.7L18 22l-6-3.6L6 22l1.5-7.3L2 10l7.1-1.1L12 2z" />
+        </svg>
+      ))}
+    </div>
+  );
+}
 
-        <div className="mt-6 inline-flex items-center gap-3 rounded-full bg-background px-5 py-2.5 shadow-soft">
-          <div className="flex gap-0.5" aria-label="5 out of 5 stars">
-            {[0, 1, 2, 3, 4].map((s) => (
-              <svg key={s} width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{ color: "oklch(0.58 0.14 38)" }}>
-                <path d="M12 2l2.9 6.9L22 10l-5.5 4.7L18 22l-6-3.6L6 22l1.5-7.3L2 10l7.1-1.1L12 2z" />
-              </svg>
-            ))}
-          </div>
-          <span className="text-sm font-medium">4.9 · 320+ Google Reviews</span>
+export function SocialProof() {
+  return (
+    <section className="py-24 sm:py-32 px-6 sm:px-12 lg:px-20" style={{ backgroundColor: "oklch(0.97 0.005 60)" }}>
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <span className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "oklch(0.47 0.13 45)" }}>
+            What People Say
+          </span>
+          <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-light text-balance" style={{ fontFamily: "'Fraunces', serif" }}>
+            Loved by <em className="italic">Santa Monica</em>
+          </h2>
         </div>
 
-        <blockquote
-          key={i}
-          className="mt-12 text-2xl sm:text-3xl lg:text-4xl font-light text-balance leading-snug animate-in fade-in duration-700"
-          style={{ fontFamily: "'Fraunces', serif" }}
-        >
-          <em className="italic">“{reviews[i].quote}”</em>
-        </blockquote>
-        <div className="mt-8 text-sm">
-          <p className="font-medium">{reviews[i].name}</p>
-          <p className="text-muted-foreground">{reviews[i].meta}</p>
-        </div>
-
-        <div className="mt-10 flex justify-center gap-2">
-          {reviews.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setI(idx)}
-              aria-label={`Show review ${idx + 1}`}
-              className="h-1.5 rounded-full transition-all"
-              style={{
-                width: idx === i ? "32px" : "8px",
-                backgroundColor: idx === i ? "oklch(0.58 0.14 38)" : "oklch(0.22 0.02 60 / 0.2)",
-              }}
-            />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {reviews.map((r, i) => (
+            <blockquote
+              key={i}
+              className="rounded-3xl bg-background p-8 shadow-soft border border-border/60 flex flex-col"
+            >
+              <Stars />
+              <p className="text-lg leading-relaxed flex-1" style={{ fontFamily: "'Fraunces', serif" }}>
+                <em className="italic">“{r.quote}”</em>
+              </p>
+              <p className="mt-6 text-xs uppercase tracking-[0.25em] text-muted-foreground">— {r.meta}</p>
+            </blockquote>
           ))}
         </div>
       </div>
