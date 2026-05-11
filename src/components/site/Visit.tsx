@@ -1,4 +1,5 @@
 import { SITE } from "@/lib/site";
+import interior from "@/assets/interior.jpg";
 
 export function Visit() {
   return (
@@ -59,15 +60,25 @@ export function Visit() {
           </div>
         </div>
 
-        <div className="relative aspect-square lg:aspect-[4/5] rounded-[2rem] overflow-hidden shadow-elevated bg-muted">
-          <iframe
-            title="Monica Café location map"
-            src={SITE.mapEmbed}
-            className="h-full w-full border-0"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            allowFullScreen
-          />
+        <div className="space-y-6">
+          <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-elevated">
+            <img
+              src={interior}
+              alt="Monica Café interior — sun-washed banquette seating and open kitchen"
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-elevated bg-muted">
+            <iframe
+              title="Monica Café location map"
+              src={SITE.mapEmbed}
+              className="h-full w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
         </div>
       </div>
     </section>
