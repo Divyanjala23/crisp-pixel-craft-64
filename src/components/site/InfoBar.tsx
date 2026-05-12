@@ -8,12 +8,12 @@ export function InfoBar() {
     { label: SITE.service },
   ];
   return (
-    <section id="info" className="border-y border-border" style={{ backgroundColor: "oklch(0.27 0.13 270)" }}>
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-5 grid grid-cols-2 lg:grid-cols-4 gap-4 text-center" style={{ color: "oklch(0.97 0.005 60)" }}>
-        {items.map((item) => (
-          <div key={item.label} className="text-xs uppercase tracking-[0.2em]">
+    <section id="info" className="relative grain border-y" style={{ backgroundColor: "oklch(0.10 0.02 50)", borderColor: "oklch(0.71 0.13 75 / 0.18)" }}>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-7 grid grid-cols-2 lg:grid-cols-4 gap-5 text-center" style={{ color: "oklch(0.97 0.015 80)" }}>
+        {items.map((item, i) => (
+          <div key={item.label} data-reveal data-reveal-delay={String(i + 1)} className="text-[11px] uppercase tracking-[0.3em]">
             {item.href ? (
-              <a href={item.href} className="hover:opacity-80 transition-opacity">{item.label}</a>
+              <a href={item.href} className="transition-colors hover:text-[color:oklch(0.78_0.13_75)]">{item.label}</a>
             ) : (
               <span>{item.label}</span>
             )}
