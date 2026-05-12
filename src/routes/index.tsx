@@ -8,6 +8,7 @@ import { SocialProof } from "@/components/site/SocialProof";
 import { Catering } from "@/components/site/Catering";
 import { Visit } from "@/components/site/Visit";
 import { Footer } from "@/components/site/Footer";
+import { RevealRoot } from "@/components/site/Reveal";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -16,6 +17,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="bg-background text-foreground">
+      <RevealRoot />
       <Nav />
       <Hero />
       <InfoBar />
