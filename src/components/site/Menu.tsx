@@ -29,43 +29,48 @@ const items = [
 
 export function Menu() {
   return (
-    <section id="menu" className="py-24 sm:py-32 px-6 sm:px-12 lg:px-20" style={{ backgroundColor: "oklch(0.97 0.015 80)" }}>
+    <section id="menu" className="py-32 sm:py-40 px-6 sm:px-12 lg:px-20" style={{ backgroundColor: "oklch(0.97 0.015 80)", backgroundImage: "radial-gradient(ellipse at top, oklch(0.93 0.03 75 / 0.7), transparent 60%)" }}>
       <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "oklch(0.71 0.13 75)" }}>
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <span data-reveal className="text-[11px] uppercase tracking-[0.4em] font-medium" style={{ color: "oklch(0.71 0.13 75)" }}>
             From Our Kitchen
           </span>
-          <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-light text-balance" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-            Food worth <em className="italic">coming back for</em>
+          <h2 data-reveal data-reveal-delay="1" className="mt-5 text-5xl sm:text-6xl lg:text-7xl font-medium text-balance leading-[1.02]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+            Food worth <em className="italic" style={{ color: "oklch(0.42 0.07 50)" }}>coming back for</em>
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-          {items.map((item) => (
-            <article key={item.name} className="group">
-              <div className="overflow-hidden rounded-2xl aspect-square shadow-soft">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-7">
+          {items.map((item, i) => (
+            <article
+              key={item.name}
+              data-reveal
+              data-reveal-delay={String((i % 6) + 1)}
+              className="group lift rounded-2xl"
+            >
+              <div className="img-warm overflow-hidden rounded-2xl aspect-square shadow-soft">
                 <img
                   src={item.img}
                   alt={item.name}
                   width={768}
                   height={768}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="h-full w-full object-cover"
                 />
               </div>
-              <h3 className="mt-4 text-base sm:text-lg font-medium" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+              <h3 className="mt-5 text-lg sm:text-xl font-medium tracking-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                 {item.name}
               </h3>
             </article>
           ))}
         </div>
 
-        <div className="mt-16 flex justify-center">
+        <div className="mt-20 flex justify-center" data-reveal>
           <a
             href={SITE.toastUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-primary text-primary-foreground px-8 py-3.5 text-sm font-medium hover:bg-primary/90 transition-all shadow-soft"
+            className="btn-gold rounded-full px-9 py-4 text-sm font-medium tracking-wide shadow-soft"
           >
             View Full Menu & Order →
           </a>
