@@ -8,8 +8,8 @@ export function InfoBar() {
     { label: SITE.service },
   ];
   return (
-    <section id="info" className="border-y border-border" style={{ backgroundColor: "oklch(0.27 0.13 270)" }}>
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-5 grid grid-cols-2 lg:grid-cols-4 gap-4 text-center" style={{ color: "oklch(0.97 0.005 60)" }}>
+    <section id="info" className="border-y border-border" style={{ backgroundColor: "oklch(0.16 0.025 50)" }}>
+      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-5 grid grid-cols-2 lg:grid-cols-4 gap-4 text-center" style={{ color: "oklch(0.97 0.015 80)" }}>
         {items.map((item) => (
           <div key={item.label} className="text-xs uppercase tracking-[0.2em]">
             {item.href ? (

@@ -29,13 +29,13 @@ const items = [
 
 export function Menu() {
   return (
-    <section id="menu" className="py-24 sm:py-32 px-6 sm:px-12 lg:px-20" style={{ backgroundColor: "oklch(0.95 0.008 60)" }}>
+    <section id="menu" className="py-24 sm:py-32 px-6 sm:px-12 lg:px-20" style={{ backgroundColor: "oklch(0.97 0.015 80)" }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "oklch(0.47 0.13 45)" }}>
+          <span className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "oklch(0.71 0.13 75)" }}>
             From Our Kitchen
           </span>
-          <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-light text-balance" style={{ fontFamily: "'Fraunces', serif" }}>
+          <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-light text-balance" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
             Food worth <em className="italic">coming back for</em>
           </h2>
         </div>
@@ -53,7 +53,7 @@ export function Menu() {
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <h3 className="mt-4 text-base sm:text-lg font-medium" style={{ fontFamily: "'Fraunces', serif" }}>
+              <h3 className="mt-4 text-base sm:text-lg font-medium" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                 {item.name}
               </h3>
             </article>

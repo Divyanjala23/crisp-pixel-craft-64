@@ -5,10 +5,10 @@ export function Visit() {
   return (
     <section id="visit" className="py-24 sm:py-32 px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto">
       <div className="text-center max-w-3xl mx-auto mb-14">
-        <span className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "oklch(0.47 0.13 45)" }}>
+        <span className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "oklch(0.71 0.13 75)" }}>
           Visit Us
         </span>
-        <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-light text-balance" style={{ fontFamily: "'Fraunces', serif" }}>
+        <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-light text-balance" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
           Your morning <em className="italic">starts here</em>
         </h2>
         <p className="mt-6 text-base sm:text-lg uppercase tracking-[0.2em] text-muted-foreground">

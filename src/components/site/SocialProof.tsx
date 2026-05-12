@@ -20,7 +20,7 @@ function Stars() {
   return (
     <div className="flex gap-0.5 mb-4" aria-label="5 out of 5 stars">
       {[0, 1, 2, 3, 4].map((s) => (
-        <svg key={s} width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style={{ color: "oklch(0.47 0.13 45)" }}>
+        <svg key={s} width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style={{ color: "oklch(0.71 0.13 75)" }}>
           <path d="M12 2l2.9 6.9L22 10l-5.5 4.7L18 22l-6-3.6L6 22l1.5-7.3L2 10l7.1-1.1L12 2z" />
         </svg>
       ))}
@@ -30,13 +30,13 @@ function Stars() {
 
 export function SocialProof() {
   return (
-    <section className="py-24 sm:py-32 px-6 sm:px-12 lg:px-20" style={{ backgroundColor: "oklch(0.97 0.005 60)" }}>
+    <section className="py-24 sm:py-32 px-6 sm:px-12 lg:px-20" style={{ backgroundColor: "oklch(0.97 0.015 80)" }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "oklch(0.47 0.13 45)" }}>
+          <span className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "oklch(0.71 0.13 75)" }}>
             What People Say
           </span>
-          <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-light text-balance" style={{ fontFamily: "'Fraunces', serif" }}>
+          <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-light text-balance" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
             Loved by <em className="italic">Santa Monica</em>
           </h2>
         </div>
@@ -48,7 +48,7 @@ export function SocialProof() {
               className="rounded-3xl bg-background p-8 shadow-soft border border-border/60 flex flex-col"
             >
               <Stars />
-              <p className="text-lg leading-relaxed flex-1" style={{ fontFamily: "'Fraunces', serif" }}>
+              <p className="text-lg leading-relaxed flex-1" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                 <em className="italic">“{r.quote}”</em>
               </p>
               <p className="mt-6 text-xs uppercase tracking-[0.25em] text-muted-foreground">— {r.meta}</p>

@@ -11,8 +11,8 @@ export function Nav() {
   return (
     <header className="fixed top-4 inset-x-4 z-50 flex justify-center pointer-events-none">
       <nav className="glass pointer-events-auto w-full max-w-6xl rounded-full pl-6 pr-2 py-2 flex items-center justify-between shadow-soft">
-        <a href="#top" className="font-semibold tracking-[0.18em] text-foreground uppercase text-sm" style={{ fontFamily: "'Fraunces', serif" }}>
-          Monica <span className="italic" style={{ color: "oklch(0.47 0.13 45)" }}>Café</span>
+        <a href="#top" className="font-semibold tracking-[0.18em] text-foreground uppercase text-sm" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+          Monica <span className="italic" style={{ color: "oklch(0.71 0.13 75)" }}>Café</span>
         </a>
         <div className="hidden md:flex items-center gap-7">
           {links.map((l) => (

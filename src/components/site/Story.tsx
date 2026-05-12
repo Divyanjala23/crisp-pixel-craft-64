@@ -24,10 +24,10 @@ export function Story() {
   return (
     <section id="story" className="py-24 sm:py-32 px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto">
       <div className="text-center max-w-3xl mx-auto mb-20">
-        <span className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "oklch(0.47 0.13 45)" }}>
+        <span className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "oklch(0.71 0.13 75)" }}>
           Our Story
         </span>
-        <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-light text-balance leading-[1.05]" style={{ fontFamily: "'Fraunces', serif" }}>
+        <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-light text-balance leading-[1.05]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
           Born from a love of <em className="italic">Mediterranean flavors</em> and California freshness
         </h2>
         <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
@@ -44,7 +44,7 @@ export function Story() {
             <div className="overflow-hidden rounded-3xl aspect-[4/5] shadow-soft mb-6">
               <img src={p.img} alt={p.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
             </div>
-            <h3 className="text-2xl font-medium" style={{ fontFamily: "'Fraunces', serif" }}>{p.title}</h3>
+            <h3 className="text-2xl font-medium" style={{ fontFamily: "'Cormorant Garamond', serif" }}>{p.title}</h3>
             <p className="mt-3 text-muted-foreground leading-relaxed">{p.desc}</p>
           </article>
         ))}
