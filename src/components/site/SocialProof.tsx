@@ -30,28 +30,35 @@ function Stars() {
 
 export function SocialProof() {
   return (
-    <section className="py-24 sm:py-32 px-6 sm:px-12 lg:px-20" style={{ backgroundColor: "oklch(0.97 0.015 80)" }}>
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "oklch(0.71 0.13 75)" }}>
+    <section className="relative grain py-32 sm:py-40 px-6 sm:px-12 lg:px-20" style={{ backgroundColor: "oklch(0.10 0.02 50)", color: "oklch(0.97 0.015 80)" }}>
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="text-center mb-20">
+          <span data-reveal className="text-[11px] uppercase tracking-[0.4em] font-medium" style={{ color: "oklch(0.78 0.13 75)" }}>
             What People Say
           </span>
-          <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-light text-balance" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-            Loved by <em className="italic">Santa Monica</em>
+          <h2 data-reveal data-reveal-delay="1" className="mt-5 text-5xl sm:text-6xl lg:text-7xl font-medium text-balance leading-[1.02]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+            Loved by <em className="italic" style={{ color: "oklch(0.78 0.13 75)" }}>Santa Monica</em>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-9">
           {reviews.map((r, i) => (
             <blockquote
               key={i}
-              className="rounded-3xl bg-background p-8 shadow-soft border border-border/60 flex flex-col"
+              data-reveal
+              data-reveal-delay={String(i + 1)}
+              className="lift rounded-3xl p-9 flex flex-col"
+              style={{
+                backgroundColor: "oklch(0.16 0.025 50 / 0.7)",
+                border: "1px solid oklch(0.71 0.13 75 / 0.18)",
+                backdropFilter: "blur(8px)",
+              }}
             >
               <Stars />
-              <p className="text-lg leading-relaxed flex-1" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+              <p className="text-lg lg:text-xl leading-[1.7] flex-1" style={{ fontFamily: "'Cormorant Garamond', serif", color: "oklch(0.97 0.015 80 / 0.95)" }}>
                 <em className="italic">“{r.quote}”</em>
               </p>
-              <p className="mt-6 text-xs uppercase tracking-[0.25em] text-muted-foreground">— {r.meta}</p>
+              <p className="mt-7 text-[11px] uppercase tracking-[0.3em]" style={{ color: "oklch(0.78 0.13 75)" }}>— {r.meta}</p>
             </blockquote>
           ))}
         </div>
