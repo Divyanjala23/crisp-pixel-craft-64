@@ -1,14 +1,16 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /** Soft gold cursor halo — desktop + non-touch only. */
 export function CursorGlow() {
   const ref = useRef<HTMLDivElement | null>(null);
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     const isTouch = window.matchMedia("(hover: none)").matches;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (isTouch || reduce) return;
+    setEnabled(true);
 
     const el = ref.current;
     if (!el) return;
@@ -36,6 +38,7 @@ export function CursorGlow() {
     };
   }, []);
 
+  if (!enabled) return null;
   return (
     <div
       ref={ref}
