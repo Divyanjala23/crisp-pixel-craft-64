@@ -58,6 +58,7 @@ function Index() {
       <Catering />
       <Visit />
       <Footer />
+      <ChatBot />
     </main>
   );
 }
