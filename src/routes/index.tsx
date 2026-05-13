@@ -9,6 +9,8 @@ import { Catering } from "@/components/site/Catering";
 import { Visit } from "@/components/site/Visit";
 import { Footer } from "@/components/site/Footer";
 import { RevealRoot } from "@/components/site/Reveal";
+import { Marquee } from "@/components/site/Marquee";
+import { CursorGlow } from "@/components/site/CursorGlow";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -18,10 +20,38 @@ function Index() {
   return (
     <main className="bg-background text-foreground">
       <RevealRoot />
+      <CursorGlow />
       <Nav />
       <Hero />
       <InfoBar />
+      <Marquee
+        items={[
+          "Çılbır",
+          "Cortado",
+          "Matcha Latte",
+          "Mezze",
+          "Smashed Eggs",
+          "Turkish Coffee",
+          "Granola Bowl",
+          "Almond Toast",
+        ]}
+        variant="dark"
+        speed={42}
+      />
       <Story />
+      <Marquee
+        items={[
+          "Farm to Table",
+          "Aegean Tradition",
+          "Slow Coffee",
+          "Daily Sourced",
+          "Santa Monica",
+          "Open 7:30",
+        ]}
+        variant="cream"
+        speed={48}
+        reverse
+      />
       <Menu />
       <SocialProof />
       <Catering />
