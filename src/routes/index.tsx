@@ -11,6 +11,7 @@ import { Footer } from "@/components/site/Footer";
 import { RevealRoot } from "@/components/site/Reveal";
 import { Marquee } from "@/components/site/Marquee";
 import { CursorGlow } from "@/components/site/CursorGlow";
+import { ChatBot } from "@/components/site/ChatBot";
 
 export const Route = createFileRoute("/")({
   component: Index,
