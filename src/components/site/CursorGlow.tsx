@@ -38,6 +38,7 @@ export function CursorGlow() {
     };
   }, []);
 
+  if (!enabled) return null;
   return (
     <div
       ref={ref}
