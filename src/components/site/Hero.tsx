@@ -112,7 +112,7 @@ export function Hero() {
               href={SITE.toastUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-gold rounded-full px-9 py-4 text-sm font-medium shadow-soft tracking-wide"
+              className="btn-gold ripple rounded-full px-9 py-4 text-sm font-medium shadow-soft tracking-wide"
             >
               Order Online →
             </a>
