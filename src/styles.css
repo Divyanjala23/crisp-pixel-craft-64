@@ -339,6 +339,20 @@
   .hero-rise-3 { animation-delay: .75s; }
   .hero-rise-4 { animation-delay: 1.05s; }
 
+  /* ============ Time-based theming ============ */
+  html[data-time="morning"] body { filter: brightness(1.04) saturate(1.05); }
+  html[data-time="midday"]  body { filter: none; }
+  html[data-time="evening"] body { filter: brightness(0.97) saturate(1.08) hue-rotate(-3deg); }
+  html[data-time="night"]   body { filter: brightness(0.92) saturate(1.1) hue-rotate(-6deg); }
+  html[data-time] body { transition: filter 1.2s ease; }
+
+  /* Subtle vignette in the evening/night */
+  html[data-time="evening"] body::before,
+  html[data-time="night"]   body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+    background: radial-gradient(ellipse at center, transparent 55%, oklch(0.10 0.02 50 / 0.35) 100%);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     [data-reveal] { opacity: 1; transform: none; transition: none; }
     .img-warm img { transition: none; }
