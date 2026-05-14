@@ -12,6 +12,9 @@ import { RevealRoot } from "@/components/site/Reveal";
 import { Marquee } from "@/components/site/Marquee";
 import { CursorGlow } from "@/components/site/CursorGlow";
 import { ChatBot } from "@/components/site/ChatBot";
+import { LoadingScreen } from "@/components/site/LoadingScreen";
+import { AmbientSound } from "@/components/site/AmbientSound";
+import { TimeTheme } from "@/components/site/TimeTheme";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -20,6 +23,8 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="bg-background text-foreground">
+      <LoadingScreen />
+      <TimeTheme />
       <RevealRoot />
       <CursorGlow />
       <Nav />
@@ -58,6 +63,7 @@ function Index() {
       <Catering />
       <Visit />
       <Footer />
+      <AmbientSound />
       <ChatBot />
     </main>
   );
