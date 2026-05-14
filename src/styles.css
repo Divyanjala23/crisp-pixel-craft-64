@@ -259,9 +259,93 @@
     pointer-events: none;
   }
 
+  /* ============ Atmosphere pack ============ */
+
+  /* Ken Burns slow zoom for hero photography */
+  @keyframes monica-kenburns {
+    0%   { transform: scale(1) translate3d(0,0,0); }
+    100% { transform: scale(1.08) translate3d(0,-1.5%,0); }
+  }
+  .kenburns { animation: monica-kenburns 16s ease-in-out infinite alternate; will-change: transform; }
+
+  /* Clip-path curtain reveal for food images */
+  @keyframes monica-curtain {
+    0%   { clip-path: inset(100% 0 0 0); }
+    100% { clip-path: inset(0 0 0 0); }
+  }
+  [data-reveal] .curtain-img,
+  .curtain-img { clip-path: inset(100% 0 0 0); transition: clip-path .9s cubic-bezier(.2,.7,.2,1); }
+  [data-reveal].is-visible .curtain-img,
+  .curtain-img.is-visible { clip-path: inset(0 0 0 0); }
+
+  /* Nav link sliding underline */
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ""; position: absolute; left: 0; bottom: -6px; height: 1px; width: 100%;
+    background: oklch(0.78 0.13 75); transform: scaleX(0); transform-origin: left center;
+    transition: transform .45s cubic-bezier(.2,.7,.2,1);
+  }
+  .nav-link:hover::after { transform: scaleX(1); }
+
+  /* Steam wisps — for hot drinks/dishes. Apply on a positioned parent. */
+  .steam { position: relative; }
+  .steam::before, .steam::after,
+  .steam > .steam-puff {
+    content: ""; position: absolute; bottom: 70%; left: 50%;
+    width: 14px; height: 50px; border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, oklch(1 0 0 / 0.55), oklch(1 0 0 / 0) 70%);
+    filter: blur(8px); opacity: 0; pointer-events: none;
+    transform: translate(-50%, 0) scale(0.8);
+    animation: monica-steam 5.5s ease-in-out infinite;
+    z-index: 3;
+  }
+  .steam::after {
+    left: 38%; animation-delay: 1.4s; animation-duration: 6.5s;
+    width: 11px; height: 42px;
+  }
+  .steam > .steam-puff {
+    left: 62%; animation-delay: 2.8s; animation-duration: 7s;
+    width: 12px; height: 46px;
+  }
+  @keyframes monica-steam {
+    0%   { opacity: 0; transform: translate(-50%, 10px) scale(0.7); }
+    25%  { opacity: 0.55; }
+    60%  { opacity: 0.35; }
+    100% { opacity: 0; transform: translate(-50%, -90px) scale(1.5); }
+  }
+
+  /* Ripple on click — JS toggles .is-rippling and sets --rx/--ry */
+  .ripple { position: relative; overflow: hidden; }
+  .ripple::after {
+    content: ""; position: absolute; left: var(--rx, 50%); top: var(--ry, 50%);
+    width: 8px; height: 8px; border-radius: 50%;
+    background: oklch(1 0 0 / 0.6); transform: translate(-50%, -50%) scale(0);
+    opacity: 0; pointer-events: none;
+  }
+  .ripple.is-rippling::after { animation: monica-ripple .65s ease-out; }
+  @keyframes monica-ripple {
+    0%   { opacity: 0.55; transform: translate(-50%, -50%) scale(0); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(40); }
+  }
+
+  /* Hero text load-in */
+  @keyframes monica-rise {
+    0%   { opacity: 0; transform: translate3d(0, 28px, 0); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  .hero-rise { opacity: 0; animation: monica-rise 1.1s cubic-bezier(.2,.7,.2,1) forwards; }
+  .hero-rise-1 { animation-delay: .15s; }
+  .hero-rise-2 { animation-delay: .45s; }
+  .hero-rise-3 { animation-delay: .75s; }
+  .hero-rise-4 { animation-delay: 1.05s; }
+
   @media (prefers-reduced-motion: reduce) {
     [data-reveal] { opacity: 1; transform: none; transition: none; }
     .img-warm img { transition: none; }
-    .float-slow { animation: none; }
+    .float-slow,
+    .kenburns,
+    .steam::before, .steam::after, .steam > .steam-puff { animation: none !important; }
+    .curtain-img { clip-path: none !important; }
+    .hero-rise { opacity: 1; animation: none; }
   }
 }
