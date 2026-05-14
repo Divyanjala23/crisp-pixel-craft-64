@@ -69,13 +69,14 @@ export function Menu() {
               key={item.name}
               data-reveal
               data-reveal-delay={String((i % 6) + 1)}
-              className={`group relative overflow-hidden rounded-3xl shadow-soft lift img-warm ${item.span ?? ""}`}
+              className={`group relative overflow-hidden rounded-3xl shadow-soft lift img-warm ${item.hot ? "steam" : ""} ${item.span ?? ""}`}
             >
+              {item.hot && <span className="steam-puff" aria-hidden />}
               <img
                 src={item.img}
                 alt={item.name}
                 loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full object-cover curtain-img"
               />
               {/* readable gradient */}
               <div
@@ -117,7 +118,7 @@ export function Menu() {
             href={SITE.toastUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-gold rounded-full px-9 py-4 text-sm font-medium tracking-wide shadow-soft"
+            className="btn-gold ripple rounded-full px-9 py-4 text-sm font-medium tracking-wide shadow-soft"
           >
             View Full Menu & Order →
           </a>
