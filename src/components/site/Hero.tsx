@@ -30,14 +30,14 @@ export function Hero() {
       className="relative min-h-[100svh] w-full overflow-hidden grain"
       style={{ backgroundColor: "oklch(0.10 0.02 50)" }}
     >
-      {/* Background photo */}
+      {/* Background photo — Ken Burns slow zoom + scroll parallax */}
       <img
         ref={imgRef}
         src={heroImg}
         alt="Çılbır — Turkish poached eggs in chili butter at Monica Café"
         width={1920}
         height={1280}
-        className="absolute inset-0 h-[120%] w-full object-cover will-change-transform"
+        className="absolute inset-0 h-[120%] w-full object-cover will-change-transform kenburns"
         style={{ filter: "saturate(1.08) contrast(1.06) brightness(0.78)" }}
       />
       {/* Cinematic gradient */}
