@@ -12,21 +12,21 @@ import pressedSandwich from "@/assets/menu/pressed-sandwich.jpg";
 import almondToast from "@/assets/menu/almond-toast.jpg";
 import { SITE } from "@/lib/site";
 
-type Item = { img: string; name: string; tag: string; span?: string };
+type Item = { img: string; name: string; tag: string; span?: string; hot?: boolean };
 
 // Bento layout — varied sizes for editorial feel.
 const items: Item[] = [
-  { img: cilbir, name: "Çılbır — Turkish Eggs", tag: "Signature", span: "md:col-span-2 md:row-span-2" },
-  { img: smashedEggs, name: "Smashed Eggs", tag: "Brunch" },
-  { img: matchaLatte, name: "Matcha Latte", tag: "Drinks" },
+  { img: cilbir, name: "Çılbır — Turkish Eggs", tag: "Signature", span: "md:col-span-2 md:row-span-2", hot: true },
+  { img: smashedEggs, name: "Smashed Eggs", tag: "Brunch", hot: true },
+  { img: matchaLatte, name: "Matcha Latte", tag: "Drinks", hot: true },
   { img: breakfastWrap, name: "Breakfast Wrap", tag: "Brunch" },
-  { img: turkishCoffee, name: "Turkish Coffee", tag: "Drinks" },
+  { img: turkishCoffee, name: "Turkish Coffee", tag: "Drinks", hot: true },
   { img: eggSandwich, name: "Egg Sandwich", tag: "Brunch", span: "md:col-span-2" },
   { img: granolaBowl, name: "Granola Bowl", tag: "Bowls" },
   { img: breakfastSalad, name: "Breakfast Salad", tag: "Bowls" },
   { img: caesarWrap, name: "Chicken Caesar Wrap", tag: "Lunch" },
   { img: pressedSandwich, name: "Pressed Sandwich", tag: "Lunch" },
-  { img: coffeeCake, name: "Coffee Cake", tag: "Pastry" },
+  { img: coffeeCake, name: "Coffee Cake", tag: "Pastry", hot: true },
   { img: almondToast, name: "Almond Butter Toast", tag: "Toast" },
 ];
 
@@ -69,13 +69,14 @@ export function Menu() {
               key={item.name}
               data-reveal
               data-reveal-delay={String((i % 6) + 1)}
-              className={`group relative overflow-hidden rounded-3xl shadow-soft lift img-warm ${item.span ?? ""}`}
+              className={`group relative overflow-hidden rounded-3xl shadow-soft lift img-warm ${item.hot ? "steam" : ""} ${item.span ?? ""}`}
             >
+              {item.hot && <span className="steam-puff" aria-hidden />}
               <img
                 src={item.img}
                 alt={item.name}
                 loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full object-cover curtain-img"
               />
               {/* readable gradient */}
               <div
@@ -117,7 +118,7 @@ export function Menu() {
             href={SITE.toastUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-gold rounded-full px-9 py-4 text-sm font-medium tracking-wide shadow-soft"
+            className="btn-gold ripple rounded-full px-9 py-4 text-sm font-medium tracking-wide shadow-soft"
           >
             View Full Menu & Order →
           </a>
