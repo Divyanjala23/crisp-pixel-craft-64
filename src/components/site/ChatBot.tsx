@@ -127,16 +127,46 @@ export function ChatBot() {
 
   return (
     <>
-      {/* Floating launcher */}
+      {/* First-visit nudge */}
+      {!open && (
+        <div
+          className="fixed bottom-24 right-5 sm:bottom-28 sm:right-7 z-[68] pointer-events-none animate-[monica-rise_.8s_ease-out_both]"
+          style={{ animationDelay: "1.6s" }}
+        >
+          <div
+            className="glass-dark rounded-2xl px-4 py-2.5 text-xs flex items-center gap-2 shadow-elevated whitespace-nowrap"
+            style={{ color: "oklch(0.97 0.015 80)" }}
+          >
+            <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "oklch(0.72 0.18 145)" }} />
+            <span>Hungry? Ask Mona ✨</span>
+          </div>
+        </div>
+      )}
+
+      {/* Floating launcher — large, gold, pulsing */}
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close chat" : "Chat with Mona"}
-        className="fixed bottom-5 right-5 sm:bottom-7 sm:right-7 z-[70] btn-gold rounded-full shadow-glow flex items-center gap-2 pl-4 pr-5 py-3.5 text-sm font-medium tracking-wide"
+        className="fixed bottom-5 right-5 sm:bottom-7 sm:right-7 z-[70] btn-gold rounded-full shadow-glow flex items-center gap-2.5 pl-5 pr-6 py-4 text-sm font-semibold tracking-wide"
       >
-        {open ? <X size={18} /> : <MessageCircle size={18} />}
-        <span className="hidden sm:inline">{open ? "Close" : "Ask Mona"}</span>
+        {!open && (
+          <span
+            aria-hidden
+            className="absolute inset-0 rounded-full pointer-events-none"
+            style={{ animation: "monica-pulse 2.2s ease-out infinite" }}
+          />
+        )}
+        {open ? <X size={20} /> : <MessageCircle size={20} />}
+        <span>{open ? "Close" : "Chat with Mona"}</span>
       </button>
+      <style>{`
+        @keyframes monica-pulse {
+          0%   { box-shadow: 0 0 0 0 oklch(0.71 0.13 75 / 0.55); }
+          70%  { box-shadow: 0 0 0 22px oklch(0.71 0.13 75 / 0); }
+          100% { box-shadow: 0 0 0 0 oklch(0.71 0.13 75 / 0); }
+        }
+      `}</style>
 
       {/* Panel */}
       <div
