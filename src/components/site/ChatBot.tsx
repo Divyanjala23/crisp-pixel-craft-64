@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, X, Send, Sparkles } from "lucide-react";
+import { MessageCircle, X, Send, Sparkles, Phone } from "lucide-react";
+
+const WHATSAPP_URL = "https://wa.me/13103038997?text=Hi%20Monica%20Caf%C3%A9%2C%20I%27d%20like%20to%20ask%20about...";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
