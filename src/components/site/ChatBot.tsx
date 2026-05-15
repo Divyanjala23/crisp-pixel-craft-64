@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, X, Send, Sparkles } from "lucide-react";
+import { MessageCircle, X, Send, Sparkles, Phone } from "lucide-react";
+
+const WHATSAPP_URL = "https://wa.me/13103038997?text=Hi%20Monica%20Caf%C3%A9%2C%20I%27d%20like%20to%20ask%20about...";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -213,6 +215,22 @@ export function ChatBot() {
               <Bubble role="assistant" content="" typing />
             )}
           </div>
+
+          {/* WhatsApp quick action — always visible */}
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mx-4 mt-1 mb-2 flex items-center justify-center gap-2 rounded-full px-4 py-2.5 text-xs font-semibold tracking-wide transition-transform hover:scale-[1.02]"
+            style={{
+              background: "linear-gradient(135deg, #25D366, #128C7E)",
+              color: "white",
+              boxShadow: "0 6px 20px rgba(37, 211, 102, 0.35)",
+            }}
+          >
+            <Phone size={14} />
+            <span>Chat on WhatsApp</span>
+          </a>
 
           {/* Suggestions */}
           {messages.length <= 1 && (
