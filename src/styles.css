@@ -340,11 +340,11 @@
   .hero-rise-4 { animation-delay: 1.05s; }
 
   /* ============ Time-based theming ============ */
-  html[data-time="morning"] body { filter: brightness(1.04) saturate(1.05); }
-  html[data-time="midday"]  body { filter: none; }
-  html[data-time="evening"] body { filter: brightness(0.97) saturate(1.08) hue-rotate(-3deg); }
-  html[data-time="night"]   body { filter: brightness(0.92) saturate(1.1) hue-rotate(-6deg); }
-  html[data-time] body { transition: filter 1.2s ease; }
+  html[data-time="morning"] { background-color: oklch(0.985 0.018 82); }
+  html[data-time="midday"]  { background-color: var(--background); }
+  html[data-time="evening"] { background-color: oklch(0.91 0.025 67); }
+  html[data-time="night"]   { background-color: oklch(0.18 0.025 50); }
+  html[data-time] body { transition: background-color 1.2s ease; }
 
   /* Subtle vignette in the evening/night */
   html[data-time="evening"] body::before,
