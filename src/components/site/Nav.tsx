@@ -18,7 +18,7 @@ export function Nav() {
   }, []);
 
   return (
-    <header className={`fixed inset-x-4 z-50 flex justify-center pointer-events-none transition-all duration-500 ${scrolled ? "top-2" : "top-4"}`}>
+    <header className={`fixed inset-x-4 z-[90] flex justify-center pointer-events-none transition-all duration-500 ${scrolled ? "top-2" : "top-4"}`}>
       <nav
         className={`pointer-events-auto w-full max-w-6xl rounded-full pl-6 pr-2 flex items-center justify-between shadow-soft transition-all duration-500 ${
           scrolled ? "glass-dark py-1.5" : "glass py-2.5"
