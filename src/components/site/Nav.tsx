@@ -4,8 +4,9 @@ import { SITE } from "@/lib/site";
 const links = [
   { href: "#top", label: "Home" },
   { href: "#menu", label: "Menu" },
+  { href: "#gallery", label: "Gallery" },
   { href: "#catering", label: "Catering" },
-  { href: "#visit", label: "Visit Us" },
+  { href: "#visit", label: "Visit" },
 ];
 
 export function Nav() {
