@@ -5,6 +5,7 @@ import { InfoBar } from "@/components/site/InfoBar";
 import { Story } from "@/components/site/Story";
 import { Menu } from "@/components/site/Menu";
 import { SocialProof } from "@/components/site/SocialProof";
+import { Gallery } from "@/components/site/Gallery";
 import { Catering } from "@/components/site/Catering";
 import { Visit } from "@/components/site/Visit";
 import { Footer } from "@/components/site/Footer";
@@ -59,6 +60,7 @@ function Index() {
         reverse
       />
       <Menu />
+      <Gallery />
       <SocialProof />
       <Catering />
       <Visit />

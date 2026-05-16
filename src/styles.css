@@ -95,7 +95,7 @@
   --shadow-soft: 0 10px 30px -10px oklch(0.71 0.13 75 / 0.15);
   --shadow-elevated: 0 24px 60px -18px oklch(0.16 0.025 50 / 0.35);
   --shadow-glow: 0 18px 50px -12px oklch(0.71 0.13 75 / 0.45);
-  --font-display: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Karla', ui-sans-serif, system-ui, sans-serif;
   --font-serif: 'Cormorant Garamond', 'Fraunces', ui-serif, Georgia, serif;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);

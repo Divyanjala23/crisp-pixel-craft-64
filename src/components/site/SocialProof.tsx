@@ -39,6 +39,20 @@ export function SocialProof() {
           <h2 data-reveal data-reveal-delay="1" className="mt-5 text-5xl sm:text-6xl lg:text-7xl font-medium text-balance leading-[1.02]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
             Loved by <em className="italic" style={{ color: "oklch(0.78 0.13 75)" }}>Santa Monica</em>
           </h2>
+          <div
+            data-reveal data-reveal-delay="2"
+            className="mt-8 inline-flex items-center gap-3 rounded-full px-5 py-2.5"
+            style={{
+              backgroundColor: "oklch(0.16 0.025 50 / 0.55)",
+              border: "1px solid oklch(0.71 0.13 75 / 0.3)",
+              backdropFilter: "blur(8px)",
+            }}
+          >
+            <Stars />
+            <span className="text-xs uppercase tracking-[0.3em]" style={{ color: "oklch(0.97 0.015 80 / 0.9)" }}>
+              4.9 · 600+ Google Reviews
+            </span>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-9">
