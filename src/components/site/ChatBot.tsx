@@ -132,7 +132,7 @@ export function ChatBot() {
       {/* First-visit nudge */}
       {!open && (
         <div
-          className="fixed bottom-24 right-5 sm:bottom-28 sm:right-7 z-[92] pointer-events-none animate-[monica-rise_.8s_ease-out_both]"
+          className="fixed bottom-24 left-5 sm:bottom-28 sm:left-7 z-[92] pointer-events-none animate-[monica-rise_.8s_ease-out_both]"
           style={{ animationDelay: "1.6s" }}
         >
           <div
@@ -150,7 +150,7 @@ export function ChatBot() {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close chat" : "Chat with Mona"}
-        className="fixed bottom-5 right-5 sm:bottom-7 sm:right-7 z-[95] btn-gold rounded-full shadow-glow flex items-center gap-2.5 pl-5 pr-6 py-4 text-sm font-semibold tracking-wide"
+        className="fixed bottom-5 left-5 sm:bottom-7 sm:left-7 z-[95] btn-gold rounded-full shadow-glow flex items-center gap-2.5 pl-5 pr-6 py-4 text-sm font-semibold tracking-wide"
       >
         {!open && (
           <span
@@ -172,7 +172,7 @@ export function ChatBot() {
 
       {/* Panel */}
       <div
-        className={`fixed z-[94] right-3 left-3 sm:left-auto sm:right-7 bottom-24 sm:bottom-28 w-auto sm:w-[400px] max-w-[440px] origin-bottom-right transition-all duration-300 ${
+        className={`fixed z-[94] left-3 right-3 sm:right-auto sm:left-7 bottom-24 sm:bottom-28 w-auto sm:w-[400px] max-w-[440px] origin-bottom-left transition-all duration-300 ${
           open ? "opacity-100 translate-y-0 scale-100 pointer-events-auto" : "opacity-0 translate-y-3 scale-95 pointer-events-none"
         }`}
       >
