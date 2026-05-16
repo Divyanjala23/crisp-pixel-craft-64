@@ -60,6 +60,7 @@ function Index() {
         reverse
       />
       <Menu />
+      <Gallery />
       <SocialProof />
       <Catering />
       <Visit />
